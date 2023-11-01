@@ -16,6 +16,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def toggle
+    @task = Task.find_by(id: params[:id].presence)
+    @task.update(completed: params[:completed])
+    render json: { message: "Success" }
+  end
+
   private
   def task_params
     params.require(:task).permit(:description)
