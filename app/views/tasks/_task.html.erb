@@ -13,7 +13,7 @@
               class: "btn bg-gray-100"
   %>
   <div class="inline-block ml-2">
-    <%= button_to "Delete", task_path(task),
+    <%= link_to "Delete", task_path(task),
                   method: :delete,
                   data: { action: "tasks#destroy" },
                   class: "btn bg-red-100" %>
